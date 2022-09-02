@@ -203,8 +203,7 @@ description: The summary description
 <h3 id="LDA-model">
 <a class="anchor" href="#LDA-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>LDA model<a class="anchor-link" href="#LDA-model"> </a>
 </h3>
-<p>Latent Dirichlet allocation (LDA) is a widey used <strong>topic-generating</strong> model Cao et al.[3]. The model can identify the representative topics underlying a <strong>document collection</strong> or a <strong>corpus</strong>. This model produces topics based on <strong>bag-of-word feature</strong>, that each document is represented as a vector, in which every word corresponds to an id and its <strong>appearing frequency</strong> in the document. When producing the topics, The model samples a document-specific multinomial distribution over topics from Dirichlet distribution, and samples the word in the document from the corresponding multinomial distribution.</p>
-<p>Despite the extensive use of this model, it has some drawbacks. First, though the bag-of-word feature processes the text into digital information which is easy for modeling, it ignores the order between words and thus simplifies the problem. Moreover, the number of generated topic is hard to determine, so it's necessary to apply some other methods to evaluate the accuracy. This notebook uses LDA model to generate some descriptive word under a given topic name, which is a classified genere of movie in Netflix, so there's only one topic corresponding to a collection of document.</p>
+<p>Latent Dirichlet allocation (LDA) is a widey used <strong>topic-generating</strong> model. The model can identify the representative topics underlying a <strong>document collection</strong> or a <strong>corpus</strong>. This model produces topics based on <strong>bag-of-word feature</strong>, that each document is represented as a vector, in which every word corresponds to an id and its <strong>appearing frequency</strong> in the document. When producing the topics, The model samples a document-specific multinomial distribution over topics from Dirichlet distribution, and samples the word in the document from the corresponding multinomial distribution.</p>
 
 </div>
 </div>
@@ -700,8 +699,6 @@ memory usage: 574.9+ KB
 <h3 id="Visualization-4">
 <a class="anchor" href="#Visualization-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visualization 4<a class="anchor-link" href="#Visualization-4"> </a>
 </h3>
-<p>Then Let's examine the values in "country" column.</p>
-
 </div>
 </div>
 </div>
@@ -745,8 +742,6 @@ memory usage: 574.9+ KB
 <h3 id="Visualization-5">
 <a class="anchor" href="#Visualization-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visualization 5<a class="anchor-link" href="#Visualization-5"> </a>
 </h3>
-<p>Then let's look at the data in "director" column.</p>
-
 </div>
 </div>
 </div>
@@ -776,9 +771,9 @@ memory usage: 574.9+ KB
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>🍿️Comments</strong>:</p>
+<p><strong>🍿️Comment</strong>:</p>
 <ul>
-<li>The names in the ranking is out of my prediction. As a fan of Christopher Nolan, I thought he should have been ranked very high, so I searched the number of his movies included in this dataframe.</li>
+<li>There are many renowned directors such as "Christopher Nolan" and "Alfred Hitchcock" who have directed many well-known movies are not included, from which it's reasonable to infer that many popular movies aren't available on Netflix or they didn't be collected by this dataset. </li>
 </ul>
 
 </div>
@@ -846,6 +841,16 @@ memory usage: 574.9+ KB
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Create a list to store the descriptions of movies from different categories</p>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -865,6 +870,16 @@ memory usage: 574.9+ KB
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Create the list for documentary descriptions</p>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -882,6 +897,16 @@ memory usage: 574.9+ KB
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Tokenize the document</p>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -902,6 +927,16 @@ memory usage: 574.9+ KB
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Stem the words</p>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -922,6 +957,16 @@ memory usage: 574.9+ KB
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Create a dictionary</p>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -975,6 +1020,27 @@ memory usage: 574.9+ KB
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>🍿️Comment:</p>
+<ul>
+<li>In this dictionary, each word corresponds to an unique number. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Make a corpus</p>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -992,6 +1058,16 @@ memory usage: 574.9+ KB
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Establish the LDA model to extract keywords</p>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1062,8 +1138,9 @@ memory usage: 574.9+ KB
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>🍿Comment</strong>:</p>
 <ul>
+<li>The number in front of each word is measured based on the appearing frequency of the word in the document, and can be explained as the recommendation rate to choose the word as the topic word.  </li>
 <li>Some of the words such as "documentary", "explore", and "world" accurately reflect the content of this category, which proves the feasibility of this task.</li>
-<li>There are many punctuations and uninformative words involved in this list, so the next step is to add these strings into myStopWords to remove them from the dictionary. </li>
+<li>There are many punctuations and uninformative words involved in this list, so the next step is to add these strings to our stop words list to remove them from the dictionary. </li>
 </ul>
 
 </div>
@@ -1175,7 +1252,7 @@ memory usage: 574.9+ KB
 <ul>
 <li>The tag words in most categories can accurately reflect the content of the movies invovled in that category, such as "gay", "love" and "teen" for LGBTQ movies, "murder", "mystery", "secret" and "killer" for Thrillers and "team", "player", "soccer" and "champion" for sports movies. </li>
 <li>By adding those punctuations into myStopWords, there are mostly meaningful words in the graphs.</li>
-<li>The "Movies" category that I mentioned before might be some movies themed on holidays, as there are keywords "friend", "christma" and "holiday" showing in the chart. </li>
+<li>The "Movies" category that was mentioned before might be some movies about holidays, because of the keywords "friend", "christma" and "holiday" in the chart.</li>
 </ul>
 
 </div>
@@ -1230,7 +1307,7 @@ memory usage: 574.9+ KB
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>🌟A Little Idea</strong>:
-After I've done this, it occurs to me a interesting game, which is to use mainly the words provided in the graph to form a sentence related to that category. For instance, we form a sentence related to Documentaries with the words in the first graph——"Documentaries are footages about people exploring the world and telling their stories".</p>
+After I've done this, it occurs to me an interesting game, which is to use mainly the words provided in the graph to form a sentence related to that category. For instance, we form a sentence related to Documentaries with the words in this graph——"Documentaries are footages about people exploring the world and telling their stories".</p>
 
 </div>
 </div>
